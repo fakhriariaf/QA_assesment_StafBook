@@ -2,9 +2,13 @@
   "name": "batch3",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "testUi": "npx playwright test --ui",
+    "codegen": "npx playwright codegen"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Fakhri Aria F",
   "license": "ISC",
   "description": "",
   "devDependencies": {
