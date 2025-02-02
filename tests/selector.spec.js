@@ -45,6 +45,7 @@ test.describe('Website Sauce', () => {
 
         const checkoutButton = page.locator('#checkout');
         await checkoutButton.click();
+        await expect(page).toHaveURL('https://www.saucedemo.com/checkout-step-one.html');
 
         const formName = page.locator('#first-name');
         await formName.fill('Fakhri');
