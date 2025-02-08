@@ -5,7 +5,8 @@
   "scripts": {
     "test": "npx playwright test",
     "testUi": "npx playwright test --ui",
-    "codegen": "npx playwright codegen"
+    "codegen": "npx playwright codegen",
+    "clean-test": "rm -rf playwright-report test-results && npx playwright test"
   },
   "keywords": [],
   "author": "Fakhri Aria F",
