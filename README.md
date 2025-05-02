@@ -83,7 +83,3 @@ https://docs.google.com/spreadsheets/d/1-frgeWsJ0XqfRFmRrU4Wm4npoCpOMQbbuxFatfDN
 👨‍💻 [Fakhri Aria F](https://github.com/fakhriariaf)
 
 ---
-
-## 📣 Contributions
-
-Feel free to fork this project and submit a Pull Request. Let’s improve QA automation together!
