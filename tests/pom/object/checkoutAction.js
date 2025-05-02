@@ -46,7 +46,6 @@ export default class checkoutActions {
         const subtotalText = await this.subTotalPrice.textContent();
         const subtotalValue = parseFloat(subtotalText.replace("Item total: $", ""));
 
-        // Verify calculated total matches subtotal on the page
         console.log(`Calculated Total: $${total.toFixed(2)}`);
         console.log(`Subtotal from Page: $${subtotalValue.toFixed(2)}`);
         expect(total).toBeCloseTo(subtotalValue, 2);

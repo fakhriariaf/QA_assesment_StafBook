@@ -17,7 +17,7 @@ test.describe.serial('Website Sauce: Login to Checkout', () => {
 
     test('Login Action', async () => {
         const login = new LoginActions(page);
-        await login.login();
+        await login.login('standard_user','secret_sauce');
     });
 
     test('Add Item Action', async () => {

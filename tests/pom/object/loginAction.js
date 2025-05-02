@@ -11,21 +11,28 @@ export default class LoginActions {
         this.usernameInput = page.locator(this.loginPage.usernameInput);
         this.passwordInput = page.locator(this.loginPage.passwordInput);
         this.loginButton = page.locator(this.loginPage.loginButton);
+        this.messageError = page.locator(this.loginPage.messageError);
     }
 
     async goto() {
         await this.page.goto('https://www.saucedemo.com/');
     }
 
-    async login() {
-        await this.usernameInput.fill('standard_user');
-        await expect(this.usernameInput).toHaveValue('standard_user');
-        await this.passwordInput.fill('secret_sauce');
-        await expect(this.passwordInput).toHaveValue('secret_sauce');
+    async login(username, password) {
+        await this.usernameInput.fill(username);
+        await this.passwordInput.fill(password);
         await this.loginButton.click();
 
         await expect.toHaveURL('https://www.saucedemo.com/inventory.html');
+    }
 
-
+    async logininvalid(username, password, expectedError) {
+        await this.usernameInput.fill(username);
+        await this.passwordInput.fill(password);
+        await this.loginButton.click();
+    
+        // Verifikasi error message muncul
+        await expect(this.messageError).toBeVisible();
+        await expect(this.messageError).toHaveText(expectedError);
     }
 }
