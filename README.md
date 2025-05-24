@@ -1,15 +1,16 @@
-# 🧪 QA Automation Assessment - StafBook
+# 🧪 QA Automation Assessment - Infokest
 
 Welcome to the **QA Automation Project** repository using [Playwright](https://playwright.dev/)!  
-This project contains automated test cases for both **API** and **Web UI** flows.
+This project contains automated test cases for **Web UI** flows.
 
 ---
 
 ## 📦 Clone & Setup
 
 ```bash
-git clone https://github.com/fakhriariaf/QA_assesment_StafBook.git
-cd QA_assesment_StafBook
+git clone https://github.com/fakhriariaf/Automation-openRMS.git
+or
+git clone git@github.com:fakhriariaf/Automation-openRMS.git
 ```
 
 ### ⚙️ Install Dependencies
@@ -19,6 +20,7 @@ cd QA_assesment_StafBook
 ```bash
 npm install
 npx playwright install
+npm install dotenv
 ```
 
 📖 For more information, visit the official Playwright docs:  
@@ -31,50 +33,44 @@ npx playwright install
 You can execute tests with the following command:
 
 ```bash
-npm run test ../tests/[fileName]
+specified test : npm run test ../tests/[fileName] or fileName
+all testcase   : npm run test
 ```
 
 ### 🧾 Examples:
 
 ```bash
-npm run test ../tests/userAPI.spec.js
-npm run test ../tests/flowWeb.spec.js
-npm run test ../tests/loginCase.spec.js
+npm run test loginPageTest.spec.js
+npm run test homePageTest.spec.js
+npm run test navBarPageTest.spec.js
 ```
 
----
-
-## 📋 Test Case Documentation
-
-🗂️ You can access the full **Test Case documentation** on Google Drive:
-https://docs.google.com/spreadsheets/d/1-frgeWsJ0XqfRFmRrU4Wm4npoCpOMQbbuxFatfDNzUE/edit?usp=sharing
-
-1. ✅ [API Test Cases]
-2. 🌐 [Web Test Cases]
 ---
 
 ## 📁 Folder Structure
 
 ```
-.
+infokest-test-automation/
+├── auth/
+│   └── authHelper.js
+├── pages/
+│   ├── homePage.js
+│   ├── loginPage.js
+│   └── navBarPage.js
+├── selectors/
+│   ├── homePageSelector.js
+│   ├── loginPageSelector.js
+│   └── navBarPageSelector.js
 ├── tests/
-│   ├── userAPI.spec.js          # API test suite
-│   ├── loginCase.spec.js        # Web login test suite
-│   ├── flowWeb.spec.js          # Web flow test suite (inventory, cart, checkout)
-│   └── pom/
-│       └── object/              # Page Object files
-├── screenshots/                 # Screenshots for each test result
+│   ├── homePageTest.spec.js  >>> test
+│   ├── loginPageTest.spec.js >>> test
+│   └── navBarPageTest.spec.js >>> test
+├── .env
+├── .gitignore
 ├── package.json
-└── README.md
+├── package-lock.json
+├── playwright.config.js
 ```
-
----
-
-## 💬 Notes
-
-- Screenshots will be saved automatically after each test (pass or fail).
-- Tests are written using Playwright’s modern syntax with Page Object Model for clarity and reusability.
-- Tests include **positive and negative cases** for both API and Web scenarios.
 
 ---
 
